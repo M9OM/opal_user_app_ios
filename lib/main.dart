@@ -5,6 +5,7 @@ import 'package:opal_user_app/controller/pageview_controller.dart';
 import 'package:opal_user_app/service/map_service.dart';
 import 'package:opal_user_app/utils/app_colors.dart';
 import 'package:opal_user_app/views/home/home_screen.dart';
+import 'package:opal_user_app/views/settings/settings_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
           useMaterial3: true,
         ),
-        home: const HomeScreen(),
+        home:  SettingsPage(),
       ),
     );
   }

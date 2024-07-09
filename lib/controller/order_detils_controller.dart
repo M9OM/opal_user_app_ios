@@ -15,7 +15,6 @@ class OrderDetailsProvider extends ChangeNotifier {
   LatLng? _endPoint;
   Set<Marker> _markers = {};
   Set<Polyline> _polylines = {};
-
   LatLng? get startPoint => _startPoint;
   LatLng? get endPoint => _endPoint;
   String? get selectedVehicleType => _selectedVehicleType;

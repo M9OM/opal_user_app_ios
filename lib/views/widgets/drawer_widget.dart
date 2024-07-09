@@ -23,7 +23,7 @@ class DrawerWidget extends StatelessWidget {
               style: TextStyle(color: Colors.black),
             ),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/IMG_0764.png'),
+              backgroundImage: AssetImage('assets/images/admin.jpeg'),
             ),
             decoration: BoxDecoration(
               color: AppColors.primaryColor.withOpacity(0.5),
