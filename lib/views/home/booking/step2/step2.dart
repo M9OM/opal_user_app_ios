@@ -2,23 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:opal_user_app/controller/map_controller.dart';
 import 'package:opal_user_app/controller/pageview_controller.dart';
 import 'package:opal_user_app/views/home/booking/confirm.dart';
-import 'package:opal_user_app/views/home/booking/step1/components/DateSelector.dart';
-import 'package:opal_user_app/views/home/booking/step1/components/LoadCounter.dart';
-import 'package:opal_user_app/views/home/booking/step1/components/VehicleTonsDropdown.dart';
-import 'package:opal_user_app/views/home/booking/step1/components/VehicleTypesList.dart';
 import 'package:opal_user_app/views/home/booking/step2/components/durationSelector.dart';
 import 'package:opal_user_app/views/home/booking/step2/components/opalStandardsSwitch.dart';
-import 'package:opal_user_app/views/widgets/custom_button.dart';
+import 'package:opal_user_app/views/home/booking/step2/components/ordertype.dart';
 import 'package:provider/provider.dart';
 import 'package:opal_user_app/controller/order_detils_controller.dart';
 
-class LoadesStanderDurationStep extends StatefulWidget {
+class Step2Page extends StatefulWidget {
   @override
-  _LoadesStanderDurationStepState createState() =>
-      _LoadesStanderDurationStepState();
+  _Step2PageState createState() => _Step2PageState();
 }
 
-class _LoadesStanderDurationStepState extends State<LoadesStanderDurationStep> {
+class _Step2PageState extends State<Step2Page> {
   bool showButton = false;
 
   @override
@@ -73,28 +68,31 @@ class _LoadesStanderDurationStepState extends State<LoadesStanderDurationStep> {
                         onDecrement: _decrementHour,
                       ),
                       const SizedBox(height: 20),
+                      
                       OpalStandardsSwitch(
                         isSwitchedOn: _isSwitchedOn,
                         onToggle: _toggleSwitch,
                       ),
+                      const SizedBox(height: 20),
+                      OrderTypeSelector(), // Add the order type selector
                     ],
                   ),
                 ),
               ),
             ),
             buildConfirmButton(
-              
-              hint:"تأكيد موقع الإنزال",
-                showButton: showButton,
-                orderProvider: orderProvider,
-                googleMapProvider: googleMapProvider,
-                pageProvider: pageProvider,
-                onPressed: () {
-                  orderProvider.setLatLngEndPoint(
-                    googleMapProvider.currentPosition,
-                  );
-                  pageProvider.nextPage();
-                }),
+              showButton: true,
+              orderProvider: orderProvider,
+              googleMapProvider: googleMapProvider,
+              pageProvider: pageProvider,
+              hint: "Drop Location",
+              onPressed: () {
+                orderProvider.setLatLngEndPoint(
+                  googleMapProvider.currentPosition,
+                );
+                pageProvider.nextPage();
+              },
+            ),
             const SizedBox(height: 30),
           ],
         );

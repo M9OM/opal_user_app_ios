@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:opal_user_app/controller/order_detils_controller.dart';
+import 'package:intl/intl.dart'; // Make sure to add the intl package in pubspec.yaml
 
 class DateSelector extends StatelessWidget {
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
+  Future<void> _selectDateTime(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: Provider.of<OrderDetailsProvider>(context, listen: false).selectedDate ?? DateTime.now(),
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
     );
-    if (picked != null) {
-      Provider.of<OrderDetailsProvider>(context, listen: false).setSelectedDate(picked);
+
+    if (pickedDate != null) {
+      final TimeOfDay? pickedTime = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.fromDateTime(
+          Provider.of<OrderDetailsProvider>(context, listen: false).selectedDate ?? DateTime.now(),
+        ),
+      );
+
+      if (pickedTime != null) {
+        final DateTime selectedDateTime = DateTime(
+          pickedDate.year,
+          pickedDate.month,
+          pickedDate.day,
+          pickedTime.hour,
+          pickedTime.minute,
+        );
+        Provider.of<OrderDetailsProvider>(context, listen: false).setSelectedDate(selectedDateTime);
+      }
     }
   }
 
@@ -22,7 +40,7 @@ class DateSelector extends StatelessWidget {
         return SizedBox(
           width: 200,
           child: GestureDetector(
-            onTap: () => _selectDate(context),
+            onTap: () => _selectDateTime(context),
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               decoration: BoxDecoration(
@@ -35,8 +53,8 @@ class DateSelector extends StatelessWidget {
                 children: [
                   Text(
                     orderProvider.selectedDate != null
-                        ? "${orderProvider.selectedDate!.toLocal()}".split(' ')[0]
-                        : 'Collect Date',
+                        ? DateFormat('yyyy-MM-dd HH:mm').format(orderProvider.selectedDate!)
+                        : 'Select Date & Time',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors.black.withOpacity(0.6),

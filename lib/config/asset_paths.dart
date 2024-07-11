@@ -10,6 +10,9 @@ class AssetPaths {
   static const String instagramSvg = '$_base/instagram.svg';
   static const String languageSvg = '$_base/lag.svg';
   static const String notificationsSvg = '$_base/bell.svg';
+  static const String disableAcountSvg = '$_base/heart-crack.svg';
+  static const String contactUsSvg = '$_base/form.svg';
+  static const String cardSvg = '$_base/credit-card.svg';
 
 
 

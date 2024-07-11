@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomInputField extends StatelessWidget {
-  final String label;
+  final String? label;
   final String hint;
   final TextEditingController controller;
   final TextInputType keyboardType;
@@ -12,7 +12,7 @@ class CustomInputField extends StatelessWidget {
 
   const CustomInputField({
     Key? key,
-    required this.label,
+     this.label,
     required this.hint,
     required this.controller,
     this.keyboardType = TextInputType.text,
@@ -32,10 +32,12 @@ class CustomInputField extends StatelessWidget {
         validator: validator,
         obscureText: obscureText,
         decoration: InputDecoration(
-          labelText: label,
           hintText: hint,
+          filled: true,
+          fillColor: Colors.white,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(25.0),
+            borderSide: BorderSide.none,
           ),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,

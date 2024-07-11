@@ -53,9 +53,28 @@ class _MapWidgetState extends State<MapWidget> {
             googleMapProvider.updateCurrentPosition(position.target);
           },
         ),
-        _buildTopBar(context,googleMapService),
-        if (isOnFirstPage) _buildCenterIcon(AppColors.primaryColor, AssetPaths.circle),
-        if (pageProvider.currentPage != 2) _buildCenterIcon(Colors.green, AssetPaths.boxSvg),
+        _buildTopBar(context, googleMapService),
+        isOnFirstPage
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _buildCenterIcon(AppColors.primaryColor, AssetPaths.circle),
+                  const SizedBox(
+                    height: 75,
+                  )
+                ],
+              )
+            : pageProvider.currentPage == 1
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _buildCenterIcon(Colors.green, AssetPaths.boxSvg),
+                      const SizedBox(
+                        height: 75,
+                      )
+                    ],
+                  )
+                : const SizedBox.shrink(),
       ],
     );
   }
@@ -65,47 +84,91 @@ class _MapWidgetState extends State<MapWidget> {
       top: 60,
       left: 10,
       right: 10,
-      child: Row(
+      child: Column(
         children: [
-          IconButton(
-            icon: IconWidget(
-              bgColor: Colors.black,
-              iconSvg: 'assets/icon/bars-sort.svg',
-            ),
-            onPressed: widget.onTapDr,
-          ),
-          Expanded(
-            child: AnimatedOpacity(
-              opacity: isSearchVisible ? 1.0 : 0.0,
-              duration: const Duration(milliseconds: 300),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _buildSearchResults(context, googleMapService)
+          Row(
+            children: [
+              IconButton(
+                icon: Stack(
+                  children: [
+                    IconWidget(
+                      bgColor: Colors.red,
+                      iconPath: 'assets/icon/bars-sort.svg',
+                    ),
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Container(
+                        width: 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: widget.onTapDr,
               ),
-            ),
-          ),
-          IconButton(
-            icon: IconWidget(
-              bgColor: Colors.black,
-              iconSvg: isSearchVisible
-                  ? "assets/icon/circle-xmark.svg"
-                  : "assets/icon/search (1).svg",
-            ),
-            onPressed: _toggleSearchVisibility,
+              Expanded(
+                child: AnimatedOpacity(
+                  opacity: isSearchVisible ? 1.0 : 0.0,
+                  duration: const Duration(milliseconds: 300),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: _buildSearchField(context, googleMapService),
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: IconWidget(
+                  bgColor: Colors.black,
+                  iconPath: isSearchVisible
+                      ? "assets/icon/circle-xmark.svg"
+                      : "assets/icon/search (1).svg",
+                ),
+                onPressed: _toggleSearchVisibility,
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 
-  Widget _buildSearchResults(BuildContext context, GoogleMapService googleMapService) {
-    return Positioned(
-      top: 120,
-      left: 10,
-      right: 10,
+  Widget _buildSearchField(
+      BuildContext context, GoogleMapService googleMapService) {
+    return GooglePlaceAutoCompleteTextField(
+      textEditingController: searchController,
+      googleAPIKey: ApiKeys.googleApiKey, // Replace with your API key
+      inputDecoration: InputDecoration(
+        hintText: "Search location",
+        filled: true,
+        fillColor: Colors.grey.withOpacity(0.5),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+      getPlaceDetailWithLatLng: (prediction) {
+        _onSearchResultTap(prediction, googleMapService);
+      },
+      itemClick: (prediction) {
+        setState(() {
+          searchController.text = prediction.description!;
+          _onSearchResultTap(prediction, googleMapService);
+        });
+      },
+    );
+  }
+
+  Widget _buildSearchResults(
+      BuildContext context, GoogleMapService googleMapService) {
+    return Container(
+      color: Colors.white,
       child: GooglePlaceAutoCompleteTextField(
         textEditingController: searchController,
-        googleAPIKey: ApiKeys.googleApiKey,  // Replace with your API key
+        googleAPIKey: ApiKeys.googleApiKey, // Replace with your API key
         inputDecoration: InputDecoration(
           hintText: "Search location",
           filled: true,
@@ -120,25 +183,27 @@ class _MapWidgetState extends State<MapWidget> {
         itemClick: (prediction) {
           setState(() {
             searchController.text = prediction.description!;
-                      _onSearchResultTap(prediction, googleMapService);
-
+            _onSearchResultTap(prediction, googleMapService);
           });
         },
       ),
     );
   }
 
-  void _onSearchResultTap(Prediction prediction, GoogleMapService googleMapService) async {
+  void _onSearchResultTap(
+      Prediction prediction, GoogleMapService googleMapService) async {
     final details = await googleMapService.getPlaceDetails(prediction.placeId!);
     if (details != null) {
       final lat = details.geometry.location.lat;
       final lng = details.geometry.location.lng;
 
-      final cameraPosition = CameraPosition(target: LatLng(lat, lng), zoom: 14.4746);
-      setState(() {
-        
-      });
-      googleMapService.mapController?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+      final cameraPosition =
+          CameraPosition(target: LatLng(lat, lng), zoom: 14.4746);
+      print('Moving camera to lat: $lat, lng: $lng');
+      googleMapService.mapController
+          ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+    } else {
+      print('Place details are null.');
     }
   }
 
@@ -155,11 +220,11 @@ class _MapWidgetState extends State<MapWidget> {
         children: [
           IconWidget(
             bgColor: color,
-            iconSvg: assetPath,
+            iconPath: assetPath,
           ),
           Container(
             width: 2,
-            height: 40,
+            height: 30,
             color: color,
           ),
         ],

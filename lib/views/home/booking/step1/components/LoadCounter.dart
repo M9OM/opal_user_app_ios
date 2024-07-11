@@ -13,7 +13,7 @@ class _LoadCounterState extends State<LoadCounter> {
 
   void _incrementLoads() {
     setState(() {
-      if (_selectedLoads < 24) _selectedLoads++;
+      _selectedLoads++;
     });
   }
 
@@ -25,29 +25,29 @@ class _LoadCounterState extends State<LoadCounter> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.remove),
-          onPressed: _decrementLoads,
-        ),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(25),
-            border: Border.all(width: 1, color: Colors.white),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white),
+        color: Colors.grey.withOpacity(0.1),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            icon: const Icon(Icons.remove),
+            onPressed: _decrementLoads,
           ),
-          child: Text(
+          Text(
             '$_selectedLoads',
           ),
-        ),
-        IconButton(
-          icon: const Icon(Icons.add),
-          onPressed: _incrementLoads,
-        ),
-      ],
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: _incrementLoads,
+          ),
+        ],
+      ),
     );
   }
 }

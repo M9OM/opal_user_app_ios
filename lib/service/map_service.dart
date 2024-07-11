@@ -10,14 +10,27 @@ class GoogleMapService {
   GoogleMapController? mapController;
 
   Future<PlaceDetails?> getPlaceDetails(String placeId) async {
-    final response = await http.get(
-      Uri.parse(
-          'https://maps.googleapis.com/maps/api/place/details/json?placeid=$placeId&key=${ApiKeys.googleApiKey}'),
-    );
-    if (response.statusCode == 200) {
-      return PlaceDetails.fromJson(json.decode(response.body));
+    try {
+      final response = await http.get(
+        Uri.parse(
+            'https://maps.googleapis.com/maps/api/place/details/json?placeid=$placeId&key=${ApiKeys.googleApiKey}'),
+      );
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
+        if (jsonResponse['result'] != null) {
+          return PlaceDetails.fromJson(jsonResponse['result']);
+        } else {
+          print('Place details result is null.');
+          return null;
+        }
+      } else {
+        print('Failed to fetch place details. Status code: ${response.statusCode}');
+        return null;
+      }
+    } catch (e) {
+      print('Error fetching place details: $e');
+      return null;
     }
-    return null;
   }
 }
 

@@ -3,6 +3,7 @@ import 'package:opal_user_app/config/asset_paths.dart';
 import 'package:opal_user_app/views/settings/components/settings_item.dart';
 import 'package:opal_user_app/views/settings/components/settings_section.dart';
 import 'package:opal_user_app/views/settings/components/user_info.dart';
+import 'package:opal_user_app/views/settings/settings_screens/payment_methods_page.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -22,18 +23,19 @@ class SettingsPage extends StatelessWidget {
             title: 'General',
             children: <Widget>[
               SettingsItem(
-                iconSvg: AssetPaths.languageSvg,
+                iconPath: AssetPaths.languageSvg,
                 title: 'Language',
+                subtitle: "English",
                 onTap: () {
                   // Handle onTap
                 },
               ),
               SettingsItem(
-                iconSvg: AssetPaths.notificationsSvg,
+                iconPath: AssetPaths.notificationsSvg,
                 title: 'Notifications',
-                onTap: () {
-                  // Handle onTap
-                },
+                onSwitchChanged: (value) {},
+                onTap: () {},
+                switchValue: true,
               ),
             ],
           ),
@@ -41,13 +43,24 @@ class SettingsPage extends StatelessWidget {
             title: 'Account',
             children: <Widget>[
               SettingsItem(
-                iconSvg: AssetPaths.infoSvg,
-                title: 'Privacy',
+                iconPath: AssetPaths.cardSvg,
+                title: 'Payment Methods',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PaymentMethodsPage(),
+                    ),
+                  );
+                },
+              ),
+              SettingsItem(
+                iconPath: AssetPaths.disableAcountSvg,
+                title: 'Disable Account',
                 onTap: () {
                   // Handle onTap
                 },
               ),
-
             ],
           ),
         ],

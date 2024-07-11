@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:opal_user_app/controller/map_controller.dart';
 import 'package:opal_user_app/controller/pageview_controller.dart';
+import 'package:opal_user_app/utils/app_colors.dart';
 import 'package:opal_user_app/views/home/booking/confirm.dart';
 import 'package:opal_user_app/views/home/booking/step1/components/DateSelector.dart';
 import 'package:opal_user_app/views/home/booking/step1/components/LoadCounter.dart';
-import 'package:opal_user_app/views/home/booking/step1/components/VehicleTonsDropdown.dart';
+import 'package:opal_user_app/views/home/booking/step1/components/VehicleSubTypesList.dart';
 import 'package:opal_user_app/views/home/booking/step1/components/VehicleTypesList.dart';
-import 'package:opal_user_app/views/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 import 'package:opal_user_app/controller/order_detils_controller.dart';
 
-class VehicleDetailsStep extends StatefulWidget {
+class Step1Page extends StatefulWidget {
   @override
-  _VehicleDetailsStepState createState() => _VehicleDetailsStepState();
+  _Step1PageState createState() => _Step1PageState();
 }
 
-class _VehicleDetailsStepState extends State<VehicleDetailsStep> {
+class _Step1PageState extends State<Step1Page> {
   bool showButton = false; // Flag to control button animation
 
   @override
@@ -43,18 +43,17 @@ class _VehicleDetailsStepState extends State<VehicleDetailsStep> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Kind of Vehicle'),
+                      const Text('Vehicle Main Type'),
                       const SizedBox(height: 10),
                       VehicleTypesList(),
-                      const SizedBox(height: 20),
-                      VehicleTonsDropdown(),
                       const SizedBox(height: 10),
-                      const Text('Loads'),
-                      const SizedBox(height: 10),
-                      const LoadCounter(),
-                      const SizedBox(height: 20),
-                      DateSelector(),
-                      const SizedBox(height: 20),
+                      VehicleSubTypesList(),
+                      // const Text('Loads'),
+                      // const SizedBox(height: 10),
+                      // const LoadCounter(),
+                      // const SizedBox(height: 20),
+                      // DateSelector(),
+                      // const SizedBox(height: 20),
                     ],
                   ),
                 ),
@@ -65,7 +64,7 @@ class _VehicleDetailsStepState extends State<VehicleDetailsStep> {
                 orderProvider: orderProvider,
                 googleMapProvider: googleMapProvider,
                 pageProvider: pageProvider,
-                hint: "تاكيد موقع التحميل",
+                hint: "Pickup Location",
                 onPressed: () {
                   orderProvider.setLatLngStartPoint(
                     googleMapProvider.currentPosition,
@@ -78,4 +77,5 @@ class _VehicleDetailsStepState extends State<VehicleDetailsStep> {
       },
     );
   }
+
 }

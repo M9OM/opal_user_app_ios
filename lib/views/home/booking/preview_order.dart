@@ -17,7 +17,7 @@ class PreViewOrderSteps extends StatelessWidget {
         children: [
           ListTile(
             leading: IconWidget(
-                bgColor: AppColors.primaryColor, iconSvg: AssetPaths.circle),
+                bgColor: AppColors.primaryColor, iconPath: AssetPaths.circle),
             title: const Text("Pick Up From"),
             subtitle: const Text("Muscat, Al Amirat"),
           ),
@@ -31,7 +31,7 @@ class PreViewOrderSteps extends StatelessWidget {
           ),
           ListTile(
             leading:
-                IconWidget(bgColor: Colors.green, iconSvg: AssetPaths.boxSvg),
+                IconWidget(bgColor: Colors.green, iconPath: AssetPaths.boxSvg),
             title: const Text("Drop Off To"),
             subtitle: const Text("Salalah, 342"),
           ),

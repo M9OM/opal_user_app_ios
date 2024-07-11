@@ -5,6 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:opal_user_app/config/api_keys.dart';
 import 'package:opal_user_app/utils/app_colors.dart';
 import 'package:http/http.dart' as http;
+enum TripType { oneWay, roundTrip }
 
 class OrderDetailsProvider extends ChangeNotifier {
   String? _selectedVehicleType;
@@ -23,7 +24,49 @@ class OrderDetailsProvider extends ChangeNotifier {
   TimeOfDay? get selectedTime => _selectedTime;
   Set<Marker> get markers => _markers;
   Set<Polyline> get polylines => _polylines;
+  List<String> _vehicleSubTypes = [];
+  List<String> get vehicleSubTypes => _vehicleSubTypes;
+ String? selectedOrderType;
 
+ 
+
+  void setSelectedOrderType(String orderType) {
+    selectedOrderType = orderType;
+    notifyListeners();
+  }
+  String _description = '';
+  TripType _tripType = TripType.oneWay;
+
+  String get description => _description;
+  TripType get tripType => _tripType;
+
+  void setDescription(String value) {
+    _description = value;
+    notifyListeners();
+  }
+
+  void setTripType(TripType type) {
+    _tripType = type;
+    notifyListeners();
+  }
+
+
+
+  void setSelectedVehicleType(String vehicleType) {
+    _selectedVehicleType = vehicleType;
+    _selectedVehicleTon = ''; // Reset the subtype selection
+    notifyListeners();
+  }
+
+  void setSelectedVehicleTon(String vehicleTon) {
+    _selectedVehicleTon = vehicleTon;
+    notifyListeners();
+  }
+
+  void setVehicleSubTypes(List<String> subTypes) {
+    _vehicleSubTypes = subTypes;
+    notifyListeners();
+  }
   void setLatLngStartPoint(LatLng point) {
     _startPoint = point;
     _markers.add(
@@ -86,18 +129,8 @@ class OrderDetailsProvider extends ChangeNotifier {
     }
   }
 
-  void setSelectedVehicleType(String vehicleType) {
-    _selectedVehicleType = vehicleType;
-    if (_selectedVehicleType != 'Truck') {
-      _selectedVehicleTon = null;
-    }
-    notifyListeners();
-  }
 
-  void setSelectedVehicleTon(String vehicleTon) {
-    _selectedVehicleTon = vehicleTon;
-    notifyListeners();
-  }
+
 
   void setSelectedDate(DateTime date) {
     _selectedDate = date;

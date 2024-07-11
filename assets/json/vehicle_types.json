@@ -1,0 +1,1113 @@
+[{
+        "VehicleTypeID": 17,
+        "VehicleType": "Sewage Tanker",
+        "Parent": 0,
+        "ICON": "Sewage  Tanker-40.png",
+        "Main": "Y",
+        "Sort": 17
+    },
+    {
+        "VehicleTypeID": 16,
+        "VehicleType": "Fuel Tanker",
+        "Parent": 0,
+        "ICON": "Fuel tanker truck(3).png",
+        "Main": "Y",
+        "Sort": 18
+    },
+    {
+        "VehicleTypeID": 81,
+        "VehicleType": "1000 Gal",
+        "Parent": 16,
+        "ICON": "Fuel tanker truck(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 14,
+        "VehicleType": "Fresh water Tanker",
+        "Parent": 0,
+        "ICON": "Fresh water Tanker.png",
+        "Main": "Y",
+        "Sort": 16
+    },
+    {
+        "VehicleTypeID": 12,
+        "VehicleType": "Prime Mover",
+        "Parent": 0,
+        "ICON": "pw-4 wheels.png",
+        "Main": "Y",
+        "Sort": 9
+    },
+    {
+        "VehicleTypeID": 13,
+        "VehicleType": "Winch Truck Prime Mover",
+        "Parent": 0,
+        "ICON": "Winch Truck Prime Mover6w.png",
+        "Main": "Y",
+        "Sort": 10
+    },
+    {
+        "VehicleTypeID": 10,
+        "VehicleType": "Lowbed",
+        "Parent": 0,
+        "ICON": "Lowbed-20.png",
+        "Main": "Y",
+        "Sort": 11
+    },
+    {
+        "VehicleTypeID": 9,
+        "VehicleType": "Reefer Truck (chiller and freezer)",
+        "Parent": 0,
+        "ICON": "Reefer Truck chiller and freezer-20(2).png",
+        "Main": "Y",
+        "Sort": 15
+    },
+    {
+        "VehicleTypeID": 7,
+        "VehicleType": "60 Feet",
+        "Parent": 0,
+        "ICON": "40feet-open.png",
+        "Main": "Y",
+        "Sort": 8
+    },
+    {
+        "VehicleTypeID": 6,
+        "VehicleType": "40 Feet",
+        "Parent": 0,
+        "ICON": "40feet-open.png",
+        "Main": "Y",
+        "Sort": 7
+    },
+    {
+        "VehicleTypeID": 5,
+        "VehicleType": "20 Feet",
+        "Parent": 0,
+        "ICON": "40feet-open.png",
+        "Main": "Y",
+        "Sort": 6
+    },
+    {
+        "VehicleTypeID": 4,
+        "VehicleType": "7 TON",
+        "Parent": 0,
+        "ICON": "7-Ton-open(1).png",
+        "Main": "Y",
+        "Sort": 4
+    },
+    {
+        "VehicleTypeID": 3,
+        "VehicleType": "3 TON",
+        "Parent": 0,
+        "ICON": "3-Ton-open.png",
+        "Main": "Y",
+        "Sort": 3
+    },
+    {
+        "VehicleTypeID": 2,
+        "VehicleType": "1 TON",
+        "Parent": 0,
+        "ICON": "4x4Open(1).png",
+        "Main": "Y",
+        "Sort": 2
+    },
+    {
+        "VehicleTypeID": 1,
+        "VehicleType": "4X4",
+        "Parent": 0,
+        "ICON": "4x4Open(1).png",
+        "Main": "Y",
+        "Sort": 1
+    },
+    {
+        "VehicleTypeID": 18,
+        "VehicleType": "Brackish water Tanker",
+        "Parent": 0,
+        "ICON": "Brackish water Tanker(3).png",
+        "Main": "Y",
+        "Sort": 19
+    },
+    {
+        "VehicleTypeID": 19,
+        "VehicleType": "Vacuum  Tanker",
+        "Parent": 0,
+        "ICON": "vacuum  Tanker.png",
+        "Main": "Y",
+        "Sort": 20
+    },
+    {
+        "VehicleTypeID": 20,
+        "VehicleType": "Towing Truck",
+        "Parent": 0,
+        "ICON": "truck-Towing Truck(7).png",
+        "Main": "Y",
+        "Sort": 13
+    },
+    {
+        "VehicleTypeID": 21,
+        "VehicleType": "Dump Truck",
+        "Parent": 0,
+        "ICON": "3tDump Truck.png",
+        "Main": "Y",
+        "Sort": 14
+    },
+    {
+        "VehicleTypeID": 22,
+        "VehicleType": "Open",
+        "Parent": 1,
+        "ICON": "4x4Open.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 23,
+        "VehicleType": "Open",
+        "Parent": 2,
+        "ICON": "4x4Open(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 24,
+        "VehicleType": "Cage",
+        "Parent": 2,
+        "ICON": "4x4Cage(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 25,
+        "VehicleType": "Box",
+        "Parent": 2,
+        "ICON": "4x4box(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 26,
+        "VehicleType": "Open Side Box",
+        "Parent": 2,
+        "ICON": "4x4OpenSideBox(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 27,
+        "VehicleType": "Open",
+        "Parent": 3,
+        "ICON": "3-Ton-open.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 28,
+        "VehicleType": "Open with hiab",
+        "Parent": 3,
+        "ICON": "3TOpen with hiab.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 29,
+        "VehicleType": "Cage",
+        "Parent": 3,
+        "ICON": "cag3T.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 30,
+        "VehicleType": "Box",
+        "Parent": 3,
+        "ICON": "3Topen.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 31,
+        "VehicleType": "Open Side Box",
+        "Parent": 3,
+        "ICON": "openside-20-T.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 32,
+        "VehicleType": "Open",
+        "Parent": 4,
+        "ICON": "7-Ton-open.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 33,
+        "VehicleType": "Open with hiab",
+        "Parent": 4,
+        "ICON": "7TOpen with hiab.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 34,
+        "VehicleType": "Cage",
+        "Parent": 4,
+        "ICON": "cag3T(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 35,
+        "VehicleType": "Box",
+        "Parent": 4,
+        "ICON": "7Topen.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 36,
+        "VehicleType": "Open Side Box",
+        "Parent": 4,
+        "ICON": "openside-20-T(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 37,
+        "VehicleType": "10 TON",
+        "Parent": 0,
+        "ICON": "7-Ton-open.png",
+        "Main": "Y",
+        "Sort": 5
+    },
+    {
+        "VehicleTypeID": 38,
+        "VehicleType": "Open",
+        "Parent": 37,
+        "ICON": "7-Ton-open(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 39,
+        "VehicleType": "Open with hiab",
+        "Parent": 37,
+        "ICON": "7TOpen with hiab(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 40,
+        "VehicleType": "Cage",
+        "Parent": 37,
+        "ICON": "cag3T(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 41,
+        "VehicleType": "Box",
+        "Parent": 37,
+        "ICON": "7Topen(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 42,
+        "VehicleType": "Open Side Box",
+        "Parent": 37,
+        "ICON": "openside-20-T(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 43,
+        "VehicleType": "Open",
+        "Parent": 5,
+        "ICON": "40feet-open(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 44,
+        "VehicleType": "Cage",
+        "Parent": 5,
+        "ICON": "truck-vector(2).jpg",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 45,
+        "VehicleType": "Box",
+        "Parent": 5,
+        "ICON": "20feet-box.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 46,
+        "VehicleType": "Open Side Box",
+        "Parent": 5,
+        "ICON": "40feet-openside(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 47,
+        "VehicleType": "Open",
+        "Parent": 6,
+        "ICON": "40feet-open.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 48,
+        "VehicleType": "Cage",
+        "Parent": 6,
+        "ICON": "truck-vector(1).jpg",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 49,
+        "VehicleType": "Box",
+        "Parent": 6,
+        "ICON": "40feet-box.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 50,
+        "VehicleType": "Open Side Box",
+        "Parent": 6,
+        "ICON": "40feet-openside.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 51,
+        "VehicleType": "Open",
+        "Parent": 7,
+        "ICON": "40feet-open(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 52,
+        "VehicleType": "Cage",
+        "Parent": 7,
+        "ICON": "truck-vector(3).jpg",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 53,
+        "VehicleType": "Box",
+        "Parent": 7,
+        "ICON": "40feet-box(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 54,
+        "VehicleType": "Open Side Box",
+        "Parent": 7,
+        "ICON": "40feet-openside(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 55,
+        "VehicleType": "1 T",
+        "Parent": 9,
+        "ICON": "Reefer Truck (chiller and freezer).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 56,
+        "VehicleType": "3 T",
+        "Parent": 9,
+        "ICON": "Reefer Truck (chiller and freezer)(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 57,
+        "VehicleType": "7 T",
+        "Parent": 9,
+        "ICON": "Reefer Truck (chiller and freezer)(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 58,
+        "VehicleType": "10 T",
+        "Parent": 9,
+        "ICON": "Reefer Truck (chiller and freezer)(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 59,
+        "VehicleType": "20 T",
+        "Parent": 9,
+        "ICON": "Reefer Truck chiller and freezer-20.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 60,
+        "VehicleType": "40 T",
+        "Parent": 9,
+        "ICON": "Reefer Truck chiller and freezer-20(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 61,
+        "VehicleType": "20 T",
+        "Parent": 10,
+        "ICON": "Lowbed-20.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 62,
+        "VehicleType": "40 T",
+        "Parent": 10,
+        "ICON": "Lowbed(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 63,
+        "VehicleType": "80 T",
+        "Parent": 10,
+        "ICON": "Lowbed(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 64,
+        "VehicleType": "100 T",
+        "Parent": 10,
+        "ICON": "Lowbed(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 65,
+        "VehicleType": "Multi Excel",
+        "Parent": 10,
+        "ICON": "Multy excel.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 66,
+        "VehicleType": "Air suspension Lowbed",
+        "Parent": 0,
+        "ICON": "Multy excel.png",
+        "Main": "Y",
+        "Sort": 12
+    },
+    {
+        "VehicleTypeID": 67,
+        "VehicleType": "20 T",
+        "Parent": 66,
+        "ICON": "Lowbed-20(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 68,
+        "VehicleType": "40 T",
+        "Parent": 66,
+        "ICON": "Lowbed(6).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 69,
+        "VehicleType": "80 T",
+        "Parent": 66,
+        "ICON": "Lowbed(5).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 70,
+        "VehicleType": "100 T",
+        "Parent": 66,
+        "ICON": "Lowbed(4).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 71,
+        "VehicleType": "4 wheels",
+        "Parent": 12,
+        "ICON": "pw-4 wheels.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 72,
+        "VehicleType": "6 wheels",
+        "Parent": 12,
+        "ICON": "pw-6 wheels.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 73,
+        "VehicleType": "6 wheels",
+        "Parent": 13,
+        "ICON": "Winch Truck Prime Mover6w.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 74,
+        "VehicleType": "Oil field truck",
+        "Parent": 13,
+        "ICON": "Oil field truck.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 75,
+        "VehicleType": "600 Gal",
+        "Parent": 14,
+        "ICON": "Fresh water Tanker.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 76,
+        "VehicleType": "1000 Gal",
+        "Parent": 14,
+        "ICON": "Fresh water Tanker(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 77,
+        "VehicleType": "4000 Gal",
+        "Parent": 14,
+        "ICON": "Fresh water Tanker(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 78,
+        "VehicleType": "5000 Gal",
+        "Parent": 14,
+        "ICON": "Fresh water Tanker(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 79,
+        "VehicleType": "8000 Gal",
+        "Parent": 14,
+        "ICON": "Fresh water Tanker(4).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 80,
+        "VehicleType": "10000 Gal",
+        "Parent": 14,
+        "ICON": "Fresh water Tanker(5).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 82,
+        "VehicleType": "2500 Gal",
+        "Parent": 16,
+        "ICON": "Fuel tanker truck(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 83,
+        "VehicleType": "4000 Gal",
+        "Parent": 16,
+        "ICON": "Fuel tanker truck(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 84,
+        "VehicleType": "5000 Gal",
+        "Parent": 16,
+        "ICON": "Fuel tanker truck.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 85,
+        "VehicleType": "8000  Gal",
+        "Parent": 16,
+        "ICON": "Fuel tanker truck10000.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 86,
+        "VehicleType": "10000 Gal",
+        "Parent": 16,
+        "ICON": "Fuel tanker truck10000(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 87,
+        "VehicleType": "1000 Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 88,
+        "VehicleType": "2500 Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 89,
+        "VehicleType": "4500 Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 90,
+        "VehicleType": "5000 Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 91,
+        "VehicleType": "8000  Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker-40(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 92,
+        "VehicleType": "10000 Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker-40(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 93,
+        "VehicleType": "1000 Gal",
+        "Parent": 18,
+        "ICON": "Brackish water Tanker(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 94,
+        "VehicleType": "2500 Gal",
+        "Parent": 18,
+        "ICON": "Brackish water Tanker(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 95,
+        "VehicleType": "4000 Gal",
+        "Parent": 18,
+        "ICON": "Brackish water Tanker(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 96,
+        "VehicleType": "5000 Gal",
+        "Parent": 18,
+        "ICON": "Brackish water Tanker.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 97,
+        "VehicleType": "8000 Gal",
+        "Parent": 18,
+        "ICON": "Brackish water Tanker-10000.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 98,
+        "VehicleType": "10000 Gal",
+        "Parent": 18,
+        "ICON": "Brackish water Tanker-10000(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 99,
+        "VehicleType": "600 Gal",
+        "Parent": 19,
+        "ICON": "vacuum  Tanker(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 100,
+        "VehicleType": "1000 Gal",
+        "Parent": 19,
+        "ICON": "vacuum  Tanker(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 101,
+        "VehicleType": "4000 Gal",
+        "Parent": 19,
+        "ICON": "vacuum  Tanker(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 102,
+        "VehicleType": "5000 Gal",
+        "Parent": 19,
+        "ICON": "vacuum  Tanker.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 103,
+        "VehicleType": "3T Flatbed",
+        "Parent": 20,
+        "ICON": "3T-TowingTruck.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 104,
+        "VehicleType": "3T Drop deck",
+        "Parent": 20,
+        "ICON": "truck-Towing Truck(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 105,
+        "VehicleType": "3T Open side drop deck",
+        "Parent": 20,
+        "ICON": "openside-20-T(9).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 106,
+        "VehicleType": "4T Flatbed",
+        "Parent": 20,
+        "ICON": "3T-TowingTruck(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 107,
+        "VehicleType": "4T Drop deck",
+        "Parent": 20,
+        "ICON": "truck-Towing Truck(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 108,
+        "VehicleType": "4T Open side drop deck",
+        "Parent": 20,
+        "ICON": "openside-20-T(8).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 109,
+        "VehicleType": "5T Flatbed",
+        "Parent": 20,
+        "ICON": "3T-TowingTruck(2).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 110,
+        "VehicleType": "5T Drop deck",
+        "Parent": 20,
+        "ICON": "truck-Towing Truck(4).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 111,
+        "VehicleType": "5T Open side drop deck",
+        "Parent": 20,
+        "ICON": "openside-20-T(7).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 112,
+        "VehicleType": "6T Flatbed",
+        "Parent": 20,
+        "ICON": "3T-TowingTruck(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 113,
+        "VehicleType": "6T Drop deck",
+        "Parent": 20,
+        "ICON": "truck-Towing Truck(5).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 114,
+        "VehicleType": "6T Open side drop deck",
+        "Parent": 20,
+        "ICON": "openside-20-T(6).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 115,
+        "VehicleType": "7T Flatbed",
+        "Parent": 20,
+        "ICON": "3T-TowingTruck(4).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 116,
+        "VehicleType": "7T Drop deck",
+        "Parent": 20,
+        "ICON": "truck-Towing Truck(8).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 117,
+        "VehicleType": "7T Open side drop deck",
+        "Parent": 20,
+        "ICON": "openside-20-T(5).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 118,
+        "VehicleType": "9T Flatbed",
+        "Parent": 20,
+        "ICON": "3T-TowingTruck(5).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 119,
+        "VehicleType": "9T Drop deck",
+        "Parent": 20,
+        "ICON": "truck-Towing Truck(7).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 120,
+        "VehicleType": "9T Open side drop deck",
+        "Parent": 20,
+        "ICON": "openside-20-T(4).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 121,
+        "VehicleType": "10T Flatbed",
+        "Parent": 20,
+        "ICON": "3T-TowingTruck(6).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 122,
+        "VehicleType": "10T Drop deck",
+        "Parent": 20,
+        "ICON": "truck-Towing Truck(6).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 123,
+        "VehicleType": "10T Open side drop deck",
+        "Parent": 20,
+        "ICON": "openside-20-T(3).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 124,
+        "VehicleType": "3T",
+        "Parent": 21,
+        "ICON": "3tDump Truck(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 125,
+        "VehicleType": "18 M3",
+        "Parent": 21,
+        "ICON": "Dump Truck18 M3.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 126,
+        "VehicleType": "40 M3",
+        "Parent": 21,
+        "ICON": "Dump Truck45 M3(1).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 127,
+        "VehicleType": "45 M3",
+        "Parent": 21,
+        "ICON": "Dump Truck45 M3xl.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 128,
+        "VehicleType": "Prime Mover Towing Truck",
+        "Parent": 20,
+        "ICON": "Prime Mover Towing Truck.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 129,
+        "VehicleType": "Skip Loader Truck.png",
+        "Parent": 0,
+        "ICON": "unknown-truck.png",
+        "Main": "Y",
+        "Sort": 22
+    },
+    {
+        "VehicleTypeID": 130,
+        "VehicleType": "Cars Carrier Truck",
+        "Parent": 0,
+        "ICON": "Cars carrier Truck.png",
+        "Main": "Y",
+        "Sort": 21
+    },
+    {
+        "VehicleTypeID": 131,
+        "VehicleType": "Skip Loader Truck",
+        "Parent": 129,
+        "ICON": "Skip Loader Truck.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 132,
+        "VehicleType": "Cars Carrier Truck",
+        "Parent": 130,
+        "ICON": "Cars carrier Truck.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 137,
+        "VehicleType": "Van",
+        "Parent": 2,
+        "ICON": "1Tvan.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 142,
+        "VehicleType": "7000  Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker-40.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 133,
+        "VehicleType": "Cage",
+        "Parent": 1,
+        "ICON": "4x4Cage.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 134,
+        "VehicleType": "Box",
+        "Parent": 1,
+        "ICON": "4x4box.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 135,
+        "VehicleType": "Open Side Box",
+        "Parent": 1,
+        "ICON": "4x4OpenSideBox.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 136,
+        "VehicleType": "4WD SUV",
+        "Parent": 1,
+        "ICON": "4WDSUV.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 138,
+        "VehicleType": "Van",
+        "Parent": 3,
+        "ICON": "3Tvan.png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 139,
+        "VehicleType": "3000 Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker(6).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 140,
+        "VehicleType": "2000 Gal",
+        "Parent": 17,
+        "ICON": "Sewage  Tanker(7).png",
+        "Main": "N",
+        "Sort": 300
+    },
+    {
+        "VehicleTypeID": 141,
+        "VehicleType": "60 T",
+        "Parent": 9,
+        "ICON": "Reefer Truck chiller and freezer-20(2).png",
+        "Main": "N",
+        "Sort": 1
+    }
+]
