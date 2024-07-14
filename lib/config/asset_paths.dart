@@ -13,6 +13,8 @@ class AssetPaths {
   static const String disableAcountSvg = '$_base/heart-crack.svg';
   static const String contactUsSvg = '$_base/form.svg';
   static const String cardSvg = '$_base/credit-card.svg';
+  static const String markerFrom = '$_base/map-marker-plus.svg';
+  static const String markerTo = '$_base/map-marker-check.svg';
 
 
 

@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:opal_user_app/config/asset_paths.dart';
 import 'package:opal_user_app/utils/app_colors.dart';
 import 'package:opal_user_app/utils/helper/nav_helper.dart';
-import 'package:opal_user_app/views/settings/settings_page.dart';
+import 'package:opal_user_app/views/screens/settings/settings_page.dart';
 import 'package:opal_user_app/views/widgets/drawer_widget/customDrawerHeader.dart';
 import 'package:opal_user_app/views/widgets/icon_widget.dart';
 
