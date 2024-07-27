@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:opal_user_app/utils/app_colors.dart';
+import 'package:opal_user_app/utils/helper/nav_helper.dart';
+import 'package:opal_user_app/views/screens/auth/registration/registration_screen.dart';
+import 'package:opal_user_app/views/screens/home/home_screen.dart';
 import 'package:opal_user_app/views/widgets/custom_input_field.dart';
 import 'package:animate_do/animate_do.dart';
 
@@ -59,21 +63,26 @@ class LoginPage extends StatelessWidget {
                               color: Colors.black,
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                "Don't have an account? ",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              Text(
-                                'Register',
-                                style: TextStyle(
-                                  color: Colors.black.withOpacity(0.7),
-                                  fontWeight: FontWeight.bold,
+                          GestureDetector(
+                            onTap: () {
+                              NavHelpers.navigateAndReplace(context, RegistrationPage());
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  "Don't have an account? ",
+                                  style: TextStyle(color: Colors.grey),
                                 ),
-                              ),
-                            ],
+                                Text(
+                                  'Register',
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.7),
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           const SizedBox(height: 20),
                           CustomInputField(
@@ -98,7 +107,7 @@ class LoginPage extends StatelessWidget {
                           const SizedBox(height: 20),
                           ElevatedButton(
                             onPressed: () {
-                              // Handle registration logic
+                              NavHelpers.navigateTo(context, HomeScreen());
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor:

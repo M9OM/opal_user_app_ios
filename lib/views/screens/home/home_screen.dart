@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:opal_user_app/views/screens/home/booking/step1/setLoction.dart';
 import 'package:opal_user_app/views/screens/home/components/map_widget.dart';
+import 'package:opal_user_app/views/screens/home/components/setLoction.dart';
 import 'package:opal_user_app/views/widgets/drawer_widget/drawer_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           SizedBox(
-            height: screenHeight * 0.70,
+            height: screenHeight * 0.82,
             width: screenWidth,
             child: Stack(
               children: [
@@ -48,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Stack(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                            padding: const EdgeInsets.all(10),
+                            decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                             child: SvgPicture.asset(
                               'assets/icon/bars-sort.svg',
                               width: 15,

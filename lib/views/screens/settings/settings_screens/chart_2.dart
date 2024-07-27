@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:opal_user_app/config/asset_paths.dart';
 
-class WalletScreen extends StatelessWidget {
+class RecentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,97 +24,7 @@ class WalletScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildHeader(),
-            const SizedBox(height: 20),
-            _buildBalanceCard(),
-            const SizedBox(height: 20),
             _buildTransactionsList(),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Row(
-      children: [
-        CircleAvatar(
-          backgroundColor: Colors.red.withOpacity(0.2),
-          child: Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: Image.asset(
-              AssetPaths.logo,
-              color: Colors.red,
-            ),
-          ),
-        ),
-        const SizedBox(width: 10),
-        const Text(
-          'User Statistics',
-          style: TextStyle(fontSize: 24),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildBalanceCard() {
-    return Card(
-      color: Colors.white, // Change this to any color you prefer
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '100 OMR',
-              style: TextStyle(
-                fontSize: 34,
-              ),
-            ),
-            Text(
-              '200 Orders',
-              style: TextStyle(fontSize: 18, color: Colors.grey),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Drivers Interacted',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    Text(
-                      '20',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Not Received',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    Text(
-                      '5',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
           ],
         ),
       ),

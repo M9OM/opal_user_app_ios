@@ -29,7 +29,7 @@ class CustomDrawerHeader extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.5),
+          color: Colors.black.withOpacity(0.2),
           borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(radius),
               ),

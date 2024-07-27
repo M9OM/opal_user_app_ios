@@ -48,6 +48,8 @@ dependencies:
   skeletonizer: ^1.4.0
   msh_checkbox: ^2.0.1
   lottie: ^3.1.2
+  image_picker: ^1.1.2
+  url_launcher: ^6.3.0
 
 
 

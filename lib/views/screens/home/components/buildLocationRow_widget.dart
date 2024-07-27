@@ -33,26 +33,33 @@ Widget buildLocationRow(
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: IconWidget(
-                bgColor: iconColor,
-                iconPath: iconPath,
+        Expanded(
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: IconWidget(
+                                      isbgColor: true,
+
+                  bgColor: iconColor,
+                  iconPath: iconPath,
+                ),
               ),
-            ),
-            Text(
-              title.isEmpty
-                  ? (isFrom ? 'From?' : 'Where to?')
-                  : TextProcessing.truncateWithEllipsis(title, 20),
-              style: TextStyle(
-                color: title.isEmpty
-                    ? Colors.black.withOpacity(0.4)
-                    : Colors.black,
+              Expanded(
+                child: Text(
+                  title.isEmpty
+                      ? (isFrom ? 'From?' : 'Where to?')
+                      : TextProcessing.truncateWithEllipsis(title, 100),
+                  style: TextStyle(
+                    color: title.isEmpty
+                        ? Colors.black.withOpacity(0.4)
+                        : Colors.black,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         Row(
           children: [

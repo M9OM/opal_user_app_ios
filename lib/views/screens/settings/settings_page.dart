@@ -28,14 +28,14 @@ class SettingsPage extends StatelessWidget {
                 subtitle: "English",
                 onTap: () {
                   // Handle onTap
-                },
+                }, bgColor: Colors.blue,
               ),
               SettingsItem(
                 iconPath: AssetPaths.notificationsSvg,
                 title: 'Notifications',
                 onSwitchChanged: (value) {},
                 onTap: () {},
-                switchValue: true,
+                switchValue: true, bgColor: Colors.orange,
               ),
             ],
           ),
@@ -52,14 +52,14 @@ class SettingsPage extends StatelessWidget {
                       builder: (context) => PaymentMethodsPage(),
                     ),
                   );
-                },
+                }, bgColor: Colors.purple,
               ),
               SettingsItem(
                 iconPath: AssetPaths.disableAcountSvg,
                 title: 'Disable Account',
                 onTap: () {
                   // Handle onTap
-                },
+                }, bgColor: Colors.red,
               ),
             ],
           ),

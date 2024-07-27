@@ -1,6 +1,11 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:opal_user_app/config/url.dart';
 import 'package:opal_user_app/utils/app_colors.dart';
+import 'package:opal_user_app/utils/helper/helper.dart';
+import 'package:opal_user_app/utils/helper/nav_helper.dart';
+import 'package:opal_user_app/views/screens/auth/login/login_screen.dart';
 import 'package:opal_user_app/views/widgets/custom_input_field.dart';
 
 class RegistrationPage extends StatelessWidget {
@@ -70,11 +75,17 @@ class RegistrationPage extends StatelessWidget {
                                 'Already have an account? ',
                                 style: TextStyle(color: Colors.grey),
                               ),
-                              Text(
-                                'Sign In',
-                                style: TextStyle(
-                                  color: Colors.black.withOpacity(0.7),
-                                  fontWeight: FontWeight.bold,
+                                                        GestureDetector(
+                            onTap: () {
+                              NavHelpers.navigateAndReplace(context, LoginPage());
+                            },
+
+                                child: Text(
+                                  'Sign In',
+                                  style: TextStyle(
+                                    color: Colors.black.withOpacity(0.7),
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ],
@@ -95,15 +106,34 @@ class RegistrationPage extends StatelessWidget {
                             controller: _passwordController,
                             obscureText: true,
                           ),
-                          const Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              'By clicking Register, you agree to our terms and conditions.',
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
+                        Align(
+  alignment: Alignment.centerRight,
+  child: RichText(
+    text: TextSpan(
+      text: 'By clicking Register, you agree to our ',
+      style: const TextStyle(
+        color: Colors.grey,
+      ),
+      children: [
+        TextSpan(
+          text: 'terms and conditions',
+          style: const TextStyle(
+            color: Colors.grey,
+            decoration: TextDecoration.underline,
+          ),
+          recognizer: TapGestureRecognizer()
+            ..onTap = () {
+              MiscHelpers.launchUrl_(Uri.parse(URLOpal.pravicy_po));
+            },
+        ),
+        const TextSpan(
+          text: '.',
+        ),
+      ],
+    ),
+  ),
+),
+
                           const SizedBox(height: 20),
                           ElevatedButton(
                             onPressed: () {

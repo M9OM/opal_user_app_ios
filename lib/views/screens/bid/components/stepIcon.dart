@@ -21,7 +21,8 @@ class StepIcon extends StatelessWidget {
       child: Column(
         children: [
           
-          IconWidget(
+          IconWidget(                    isbgColor: true,
+
             iconPath: iconPath,
             bgColor: isSelected ? Colors.green : Colors.black,
           ),

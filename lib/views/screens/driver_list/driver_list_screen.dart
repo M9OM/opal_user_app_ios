@@ -11,7 +11,6 @@ class DriverList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Bids'),),
       body: ListView.builder(
         itemCount: drivers.length,
         itemBuilder: (context, index) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:opal_user_app/config/asset_paths.dart';
 import 'package:opal_user_app/controller/map_controller.dart';
 import 'package:opal_user_app/views/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,8 @@ class OrderReviewScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Lottie.asset('assets/icon/chcke.json', width: 100, repeat: false),
+                      Lottie.asset('assets/icon/check.json',
+                          width: 100, repeat: false),
                       const SizedBox(height: 8),
                       const Text(
                         'Thank you for your order!',
@@ -66,11 +68,13 @@ class OrderReviewScreen extends StatelessWidget {
                     // Navigate and replace to HomeScreen
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomeScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
                     );
                   },
                   style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 32.0),
                     backgroundColor: Colors.black,
                   ),
                   child: const Text(
@@ -105,7 +109,9 @@ class OrderReviewScreen extends StatelessWidget {
                 TextButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.black, padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                    foregroundColor: Colors.black,
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 32.0),
                     backgroundColor: Colors.white,
                   ),
                   child: const Row(
@@ -121,7 +127,9 @@ class OrderReviewScreen extends StatelessWidget {
                 TextButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.black, padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                    foregroundColor: Colors.black,
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 32.0),
                     backgroundColor: Colors.white,
                   ),
                   child: const Row(

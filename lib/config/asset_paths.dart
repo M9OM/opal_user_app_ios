@@ -15,7 +15,14 @@ class AssetPaths {
   static const String cardSvg = '$_base/credit-card.svg';
   static const String markerFrom = '$_base/map-marker-plus.svg';
   static const String markerTo = '$_base/map-marker-check.svg';
-
+  static const String checkJson = 'assets/icon/check.json';
+  static const String chartSvg = 'assets/icon/stats.svg';
+  static const String contactSvg = 'assets/icon/headset.svg';
+    static const String onWayJson = 'assets/icon/car_loading.json';
+    static const String xPng = '$_base/twitter-alt.png';
+    static const String instagramPng = '$_base/instagram.png';
+    static const String facebookPng = '$_base/facebook.png';
+        static const String cashSvg = '$_base/money-bill-wave.svg';
 
 
 }

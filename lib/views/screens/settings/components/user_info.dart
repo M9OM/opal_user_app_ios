@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:opal_user_app/utils/app_colors.dart';
+import 'package:opal_user_app/utils/helper/nav_helper.dart';
+import 'package:opal_user_app/views/screens/edit_profile/edit_profile.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class UserInfo extends StatelessWidget {
   final String name;
@@ -53,16 +56,20 @@ class UserInfo extends StatelessWidget {
             ),
 
 
-                        Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.backgroundColor),
-                child: Icon(
-                  Icons.edit,
-                  size: 18,
-                  color: Colors.black,
-                )),
+                        IconButton(onPressed: () {
+                          NavHelpers.navigateTo(context, EditProfileScreen());
+                        },
+                          icon: Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: AppColors.backgroundColor),
+                                          child: Icon(
+                                            Icons.edit,
+                                            size: 18,
+                                            color: Colors.black,
+                                          )),
+                        ),
           ],
         ),
       ),

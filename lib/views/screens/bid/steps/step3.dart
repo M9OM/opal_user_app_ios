@@ -5,13 +5,26 @@ class StepThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: buildSection([
-        buildTextField(
-          hint: 'Attach',
-          controller: TextEditingController(),
-          icon: Icon(Icons.camera_alt),
-        ),
-      ], "Attach"),
+      child: ListView(
+                        padding: EdgeInsets.zero, 
+
+        children: [
+          buildSection([
+            buildTextField(
+              hint: 'Attach',
+              controller: TextEditingController(),
+              icon: Icon(Icons.camera_alt),
+            ),
+          ], "Attach"),
+                    buildSection([
+            buildTextField(
+              hint: 'Description / Special Handling',
+              controller: TextEditingController(),
+            ),
+          ], "Description"),
+
+        ],
+      ),
     );
   }
 }

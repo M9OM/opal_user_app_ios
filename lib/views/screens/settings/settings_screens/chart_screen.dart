@@ -12,12 +12,32 @@ class ChartScreen extends StatefulWidget {
 class _ChartScreenState extends State<ChartScreen>
     with SingleTickerProviderStateMixin {
   final List<UserStatistics> data = [
-    UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
-    UserStatistics('Paid', 15, DateTime(2022, 6, 15)),
-    UserStatistics('Paid', 20, DateTime(2023, 2, 5)),
-    UserStatistics('Paid', 25, DateTime(2023, 2, 5)),
-    UserStatistics('Ordered Driver', 30, DateTime(2024, 3, 20)),
-    UserStatistics('Ordered Driver', 35, DateTime(2022, 3, 20)),
+UserStatistics('Paid', 20, DateTime(2007, 2, 5)),
+UserStatistics('Paid', 25, DateTime(2011, 2, 5)),
+UserStatistics('Paid', 20, DateTime(2013, 2, 5)),
+UserStatistics('Paid', 15, DateTime(2015, 6, 15)),
+UserStatistics('Paid', 15, DateTime(2019, 6, 15)),
+UserStatistics('Paid', 10, DateTime(2020, 1, 1)),
+UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
+UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
+UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
+UserStatistics('Paid', 15, DateTime(2022, 6, 15)),
+UserStatistics('Paid', 15, DateTime(2022, 6, 15)),
+UserStatistics('Paid', 20, DateTime(2023, 2, 5)),
+UserStatistics('Paid', 25, DateTime(2023, 2, 5)),
+UserStatistics('Paid', 20, DateTime(2023, 2, 5)),
+UserStatistics('Paid', 25, DateTime(2023, 2, 5)),
+UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
+UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
+UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
+UserStatistics('Paid', 35, DateTime(2023, 11, 20)),
+UserStatistics('Paid', 35, DateTime(2023, 11, 20)),
+UserStatistics('Ordered Driver', 35, DateTime(2020, 11, 20)),
+UserStatistics('Ordered Driver', 40, DateTime(2021, 1, 5)),
+UserStatistics('Ordered Driver', 40, DateTime(2022, 1, 5)),
+UserStatistics('Ordered Driver', 40, DateTime(2023, 1, 5)),
+UserStatistics('Ordered Driver', 30, DateTime(2024, 3, 20)),
+UserStatistics('Ordered Driver', 55, DateTime(2024, 5, 15))
   ];
 
   String _selectedPeriod = 'Yearly';
@@ -163,12 +183,13 @@ class _ChartScreenState extends State<ChartScreen>
                     Container(
                       height: 300,
                       child: SfCartesianChart(
+                                      tooltipBehavior: TooltipBehavior(enable: true),
+
                         primaryXAxis: DateTimeAxis(),
                         series: <ChartSeries<UserStatistics, DateTime>>[
-                          SplineAreaSeries<UserStatistics, DateTime>(
+                          LineSeries<UserStatistics, DateTime>(
                             dataSource: getChartData('Paid'),
-                            gradient: LinearGradient(
-                                colors: [Colors.red, Colors.red.shade200]),
+                            color: Colors.red,
                             xValueMapper: (UserStatistics stats, _) =>
                                 stats.timestamp,
                             yValueMapper: (UserStatistics stats, _) =>
@@ -209,12 +230,13 @@ class _ChartScreenState extends State<ChartScreen>
                     Container(
                       height: 300,
                       child: SfCartesianChart(
+                                                              tooltipBehavior: TooltipBehavior(enable: true),
+
                         primaryXAxis: DateTimeAxis(),
                         series: <ChartSeries<UserStatistics, DateTime>>[
-                          SplineAreaSeries<UserStatistics, DateTime>(
+                          LineSeries<UserStatistics, DateTime>(
                             dataSource: getChartData('Ordered Driver'),
-                            gradient: LinearGradient(
-                                colors: [Colors.blue, Colors.blue.shade200]),
+                            color: Colors.blue,
                             xValueMapper: (UserStatistics stats, _) =>
                                 stats.timestamp,
                             yValueMapper: (UserStatistics stats, _) =>

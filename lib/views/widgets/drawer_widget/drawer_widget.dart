@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:opal_user_app/config/asset_paths.dart';
+import 'package:opal_user_app/config/url.dart';
 import 'package:opal_user_app/utils/app_colors.dart';
+import 'package:opal_user_app/utils/helper/helper.dart';
 import 'package:opal_user_app/utils/helper/nav_helper.dart';
+import 'package:opal_user_app/views/screens/auth/login/login_screen.dart';
+import 'package:opal_user_app/views/screens/contactUs/contactUs_screen.dart';
+import 'package:opal_user_app/views/screens/notification/notification_screen.dart';
+import 'package:opal_user_app/views/screens/recent_order/recent_order.dart';
 import 'package:opal_user_app/views/screens/settings/settings_page.dart';
+import 'package:opal_user_app/views/screens/settings/settings_screens/chart_screen.dart';
+import 'package:opal_user_app/views/widgets/dialogs/confirm_dialog.dart';
 import 'package:opal_user_app/views/widgets/drawer_widget/customDrawerHeader.dart';
 import 'package:opal_user_app/views/widgets/icon_widget.dart';
 
@@ -17,14 +24,16 @@ class DrawerWidget extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-              CustomDrawerHeader(
-                accountName: 'John Doe',
-                accountEmail: 'johndoe@example.com',
-                backgroundImage: 'assets/icon/bg1.png',
-                avatarImage: 'assets/images/admin.jpeg',
-              ),
+          CustomDrawerHeader(
+            accountName: 'John Doe',
+            accountEmail: 'johndoe@example.com',
+            backgroundImage: 'assets/icon/bg1.png',
+            avatarImage: 'assets/images/admin.jpeg',
+          ),
           ListTile(
             leading: IconWidget(
+                                  isbgColor: false,
+
               bgColor: AppColors.primaryColor,
               iconPath: AssetPaths.houseSvg,
             ),
@@ -35,19 +44,22 @@ class DrawerWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: IconWidget(
+            leading: IconWidget(                                  isbgColor: false,
+
               bgColor: AppColors.primaryColor,
-              iconPath: AssetPaths.settingsSvg,
+              iconPath: AssetPaths.chartSvg,
             ),
-            title: const Text('Settings'),
+            title: const Text('Chart'),
             onTap: () {
-              NavHelpers.navigateTo(context, SettingsPage());
+              NavHelpers.navigateTo(context, ChartScreen());
+              // Handle logout
             },
           ),
           ListTile(
             leading: Stack(
               children: [
-                IconWidget(
+                IconWidget(                                  isbgColor: false,
+
                   bgColor: AppColors.primaryColor,
                   iconPath: AssetPaths.notificationsSvg,
                 ),
@@ -67,23 +79,48 @@ class DrawerWidget extends StatelessWidget {
             ),
             title: const Text('Notification'),
             onTap: () {
-              Navigator.pop(context);
-              // Navigate to Account
+              NavHelpers.navigateTo(context, NotificationScreen());
             },
           ),
           ListTile(
-            leading: IconWidget(
+            leading: IconWidget(                                  isbgColor: false,
+
+              bgColor: AppColors.primaryColor,
+              iconPath: AssetPaths.settingsSvg,
+            ),
+            title: const Text('Settings'),
+            onTap: () {
+              NavHelpers.navigateTo(context, SettingsPage());
+            },
+          ),
+                    ListTile(
+            leading: IconWidget(                                  isbgColor: false,
+
               bgColor: AppColors.primaryColor,
               iconPath: AssetPaths.contactUsSvg,
             ),
-            title: const Text('Contact Us'),
+            title: const Text('Orders'),
             onTap: () {
-              Navigator.pop(context);
+              NavHelpers.navigateTo(context, OrderListScreen());
               // Handle logout
             },
           ),
           ListTile(
-            leading: IconWidget(
+            leading: IconWidget(                                  isbgColor: false,
+
+              bgColor: AppColors.primaryColor,
+              iconPath: AssetPaths.contactSvg,
+            ),
+            title: const Text('Contact Us'),
+            onTap: () {
+
+              NavHelpers.navigateTo(context, ContactUsPage());
+              // Handle logout
+            },
+          ),
+          ListTile(
+            leading: IconWidget(                                  isbgColor: false,
+
               bgColor: AppColors.primaryColor,
               iconPath: 'assets/icon/logocolor.png',
             ),
@@ -94,24 +131,36 @@ class DrawerWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: IconWidget(
+            leading: IconWidget(                                  isbgColor: false,
+
               bgColor: AppColors.primaryColor,
               iconPath: AssetPaths.infoSvg,
             ),
             title: const Text('Privacy Policy'),
             onTap: () {
-              Navigator.pop(context);
-              // Navigate to Privacy Policy
+MiscHelpers.launchUrl_(Uri.parse(URLOpal.pravicy_po));              // Navigate to Privacy Policy
             },
           ),
           ListTile(
-            leading: IconWidget(
+            leading: IconWidget(                                  isbgColor: false,
+
               bgColor: AppColors.primaryColor,
               iconPath: AssetPaths.logoutSvg,
             ),
             title: const Text('Logout'),
             onTap: () {
-              Navigator.pop(context);
+showConfirmDialog(
+            context,
+            title: 'Confirmation',
+            content: 'Are you sure you want to logout?',
+            onConfirm: () {
+              NavHelpers.navigateAndRemoveUntil(context, LoginPage());
+            },
+            onCancel: () {
+              // Handle cancellation action
+              Navigator.of(context).pop(); // Close the dialog
+            },
+          );
               // Handle logout
             },
           ),

@@ -8,7 +8,9 @@ class StepOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
+      child: ListView(
+                        padding: EdgeInsets.zero, 
+
         children: [
           buildSection([LoadCounter()], "Loads"),
           buildSection([

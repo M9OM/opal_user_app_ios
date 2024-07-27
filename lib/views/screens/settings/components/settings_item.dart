@@ -8,6 +8,7 @@ class SettingsItem extends StatelessWidget {
   final VoidCallback onTap;
   final String? subtitle;
   final bool? switchValue;
+  final Color bgColor;
   final ValueChanged<bool>? onSwitchChanged;
 
   SettingsItem({
@@ -15,6 +16,7 @@ class SettingsItem extends StatelessWidget {
     required this.title,
     required this.onTap,
     this.subtitle,
+   required this.bgColor,
     this.switchValue,
     this.onSwitchChanged,
   });
@@ -24,7 +26,8 @@ class SettingsItem extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          leading: IconWidget(bgColor: AppColors.primaryColor, iconPath: iconPath),
+          leading: IconWidget(                    isbgColor: true,
+bgColor: bgColor, iconPath: iconPath),
           title: Text(title),
           subtitle: subtitle != null ? Text(subtitle!) : null,
           trailing: switchValue != null

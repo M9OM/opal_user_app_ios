@@ -6,7 +6,8 @@ class ConfirmDialog extends StatelessWidget {
   final VoidCallback onConfirm;
   final VoidCallback onCancel;
 
-  const ConfirmDialog({super.key, 
+  const ConfirmDialog({
+    super.key,
     required this.title,
     required this.content,
     required this.onConfirm,
@@ -30,4 +31,24 @@ class ConfirmDialog extends StatelessWidget {
       ],
     );
   }
+}
+
+void showConfirmDialog(
+  BuildContext context, {
+  required String title,
+  required String content,
+  required VoidCallback onConfirm,
+  required VoidCallback onCancel,
+}) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return ConfirmDialog(
+        title: title,
+        content: content,
+        onConfirm: onConfirm,
+        onCancel: onCancel,
+      );
+    },
+  );
 }
