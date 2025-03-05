@@ -6,9 +6,14 @@ class StepThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ListView(
-                        padding: EdgeInsets.zero, 
-
+        padding: EdgeInsets.zero,
         children: [
+          buildSection([
+            buildTextField(
+              hint: 'Description / Special Handling',
+              controller: TextEditingController(),
+            ),
+          ], "Description"),
           buildSection([
             buildTextField(
               hint: 'Attach',
@@ -16,13 +21,6 @@ class StepThree extends StatelessWidget {
               icon: Icon(Icons.camera_alt),
             ),
           ], "Attach"),
-                    buildSection([
-            buildTextField(
-              hint: 'Description / Special Handling',
-              controller: TextEditingController(),
-            ),
-          ], "Description"),
-
         ],
       ),
     );

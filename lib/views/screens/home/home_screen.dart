@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           SizedBox(
-            height: screenHeight * 0.82,
+            height: screenHeight * 0.67,
             width: screenWidth,
             child: Stack(
               children: [

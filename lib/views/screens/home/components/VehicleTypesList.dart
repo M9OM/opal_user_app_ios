@@ -26,8 +26,11 @@ class _VehicleTypesListState extends State<VehicleTypesList> {
         double fontSize = isSelected ? 12.0 : 13.0;
 
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
+         Text('Main Vehicle'),
+              const SizedBox(height: 10),
+
             AnimatedContainer(
               duration: const Duration(milliseconds: 500),
               height: containerHeight,

@@ -39,8 +39,7 @@ Widget buildLocationRow(
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: IconWidget(
-                                      isbgColor: true,
-
+                  isbgColor: true,
                   bgColor: iconColor,
                   iconPath: iconPath,
                 ),

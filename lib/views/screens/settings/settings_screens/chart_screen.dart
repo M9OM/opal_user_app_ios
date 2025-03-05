@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:intl/intl.dart';
-import 'package:opal_user_app/models/chart_user_model.dart';
 
 class ChartScreen extends StatefulWidget {
   @override
@@ -12,32 +10,38 @@ class ChartScreen extends StatefulWidget {
 class _ChartScreenState extends State<ChartScreen>
     with SingleTickerProviderStateMixin {
   final List<UserStatistics> data = [
-UserStatistics('Paid', 20, DateTime(2007, 2, 5)),
-UserStatistics('Paid', 25, DateTime(2011, 2, 5)),
-UserStatistics('Paid', 20, DateTime(2013, 2, 5)),
-UserStatistics('Paid', 15, DateTime(2015, 6, 15)),
-UserStatistics('Paid', 15, DateTime(2019, 6, 15)),
-UserStatistics('Paid', 10, DateTime(2020, 1, 1)),
-UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
-UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
-UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
-UserStatistics('Paid', 15, DateTime(2022, 6, 15)),
-UserStatistics('Paid', 15, DateTime(2022, 6, 15)),
-UserStatistics('Paid', 20, DateTime(2023, 2, 5)),
-UserStatistics('Paid', 25, DateTime(2023, 2, 5)),
-UserStatistics('Paid', 20, DateTime(2023, 2, 5)),
-UserStatistics('Paid', 25, DateTime(2023, 2, 5)),
-UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
-UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
-UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
-UserStatistics('Paid', 35, DateTime(2023, 11, 20)),
-UserStatistics('Paid', 35, DateTime(2023, 11, 20)),
-UserStatistics('Ordered Driver', 35, DateTime(2020, 11, 20)),
-UserStatistics('Ordered Driver', 40, DateTime(2021, 1, 5)),
-UserStatistics('Ordered Driver', 40, DateTime(2022, 1, 5)),
-UserStatistics('Ordered Driver', 40, DateTime(2023, 1, 5)),
-UserStatistics('Ordered Driver', 30, DateTime(2024, 3, 20)),
-UserStatistics('Ordered Driver', 55, DateTime(2024, 5, 15))
+    UserStatistics('Paid', 20, DateTime(2007, 2, 5)),
+    UserStatistics('Paid', 25, DateTime(2011, 2, 5)),
+    UserStatistics('Paid', 20, DateTime(2013, 2, 5)),
+    UserStatistics('Paid', 15, DateTime(2015, 6, 15)),
+    UserStatistics('Paid', 15, DateTime(2019, 6, 15)),
+    UserStatistics('Paid', 10, DateTime(2020, 1, 1)),
+    UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
+    UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
+    UserStatistics('Paid', 10, DateTime(2022, 1, 1)),
+    UserStatistics('Paid', 15, DateTime(2022, 6, 15)),
+    UserStatistics('Paid', 15, DateTime(2022, 6, 15)),
+    UserStatistics('Paid', 20, DateTime(2023, 2, 5)),
+    UserStatistics('Paid', 25, DateTime(2023, 2, 5)),
+    UserStatistics('Paid', 20, DateTime(2023, 2, 5)),
+    UserStatistics('Paid', 25, DateTime(2023, 2, 5)),
+    UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
+    UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
+    UserStatistics('Paid', 30, DateTime(2023, 7, 10)),
+    UserStatistics('Paid', 35, DateTime(2023, 11, 20)),
+    UserStatistics('Paid', 35, DateTime(2023, 11, 20)),
+    UserStatistics('Completed Orders', 20, DateTime(2020, 11, 20)),
+    UserStatistics('Completed Orders', 30, DateTime(2021, 1, 5)),
+    UserStatistics('Completed Orders', 35, DateTime(2022, 1, 5)),
+    UserStatistics('Completed Orders', 40, DateTime(2023, 1, 5)),
+    UserStatistics('Completed Orders', 25, DateTime(2024, 3, 20)),
+    UserStatistics('Completed Orders', 45, DateTime(2024, 5, 15)),
+    UserStatistics('Canceled Orders', 15, DateTime(2020, 11, 20)),
+    UserStatistics('Canceled Orders', 10, DateTime(2021, 1, 5)),
+    UserStatistics('Canceled Orders', 5, DateTime(2022, 1, 5)),
+    UserStatistics('Canceled Orders', 0, DateTime(2023, 1, 5)),
+    UserStatistics('Canceled Orders', 5, DateTime(2024, 3, 20)),
+    UserStatistics('Canceled Orders', 10, DateTime(2024, 5, 15))
   ];
 
   String _selectedPeriod = 'Yearly';
@@ -183,8 +187,7 @@ UserStatistics('Ordered Driver', 55, DateTime(2024, 5, 15))
                     Container(
                       height: 300,
                       child: SfCartesianChart(
-                                      tooltipBehavior: TooltipBehavior(enable: true),
-
+                        tooltipBehavior: TooltipBehavior(enable: true),
                         primaryXAxis: DateTimeAxis(),
                         series: <ChartSeries<UserStatistics, DateTime>>[
                           LineSeries<UserStatistics, DateTime>(
@@ -222,7 +225,7 @@ UserStatistics('Ordered Driver', 55, DateTime(2024, 5, 15))
                 child: Column(
                   children: [
                     Text(
-                      'Ordered Driver Events ($_selectedPeriod) - Total: ${getTotalOMR('Ordered Driver')}',
+                      'Order Events ($_selectedPeriod)',
                       style: TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
@@ -230,19 +233,28 @@ UserStatistics('Ordered Driver', 55, DateTime(2024, 5, 15))
                     Container(
                       height: 300,
                       child: SfCartesianChart(
-                                                              tooltipBehavior: TooltipBehavior(enable: true),
-
+                        tooltipBehavior: TooltipBehavior(enable: true),
                         primaryXAxis: DateTimeAxis(),
                         series: <ChartSeries<UserStatistics, DateTime>>[
-                          LineSeries<UserStatistics, DateTime>(
-                            dataSource: getChartData('Ordered Driver'),
-                            color: Colors.blue,
+                          StackedBarSeries<UserStatistics, DateTime>(
+                            dataSource: getChartData('Completed Orders'),
+                            color: Colors.green,
                             xValueMapper: (UserStatistics stats, _) =>
                                 stats.timestamp,
                             yValueMapper: (UserStatistics stats, _) =>
                                 stats.count,
-                            name: 'Ordered Driver',
-                            markerSettings: MarkerSettings(isVisible: true),
+                            name: 'Completed Orders',
+                            dataLabelSettings:
+                                DataLabelSettings(isVisible: true),
+                          ),
+                          StackedBarSeries<UserStatistics, DateTime>(
+                            dataSource: getChartData('Canceled Orders'),
+                            color: Colors.red,
+                            xValueMapper: (UserStatistics stats, _) =>
+                                stats.timestamp,
+                            yValueMapper: (UserStatistics stats, _) =>
+                                stats.count,
+                            name: 'Canceled Orders',
                             dataLabelSettings:
                                 DataLabelSettings(isVisible: true),
                           ),
